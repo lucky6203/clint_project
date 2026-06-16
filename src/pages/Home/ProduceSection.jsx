@@ -7,7 +7,7 @@ export function ProduceSection() {
   const [activeTab, setActiveTab] = useState('fruits');
 
   return (
-    <section id="produce" className="bg-offwhite py-16 px-6 md:py-20 md:px-16 lg:px-[72px]">
+    <section id="products" className="bg-offwhite py-16 px-6 md:py-20 md:px-16 lg:px-[72px]">
       <div className="max-w-[1280px] mx-auto">
         <SectionEyebrow text="What We Trade" />
         <SectionHeading>Our <em className="text-brown not-italic">Produce</em></SectionHeading>

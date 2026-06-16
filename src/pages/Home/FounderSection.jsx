@@ -4,7 +4,7 @@ import founderImg from "@/assets/images/founder-removebg-preview.png";
 export function FounderSection() {
   return (
     <section
-      id="founder"
+  id="about"
       className="grid grid-cols-1 lg:grid-cols-2 min-h-[540px] bg-[#1F3A2C]"
     >
       {/* Left Image */}
