@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
+
+  --color-forest: #1A3626;
+  --color-lime: #D6E846;
+  --color-cream: #F5F3E9;
+  --color-brown: #8D5A36;
+  --color-olive: #5C7034;
+  --color-terracotta: #D36C45;
+  --color-green: #274D38;
+  --color-offwhite: #FAFAFA;
+}
+
+@layer base {
+  body {
+    @apply bg-offwhite text-forest antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-ticker {
+    animation: ticker 40s linear infinite;
+  }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
