@@ -9,21 +9,19 @@ export function FounderSection() {
     >
       {/* Left Image */}
      <div className="flex items-center justify-center p-8 lg:p-12 bg-[#2d4a2d]">
-  <div className="w-full max-w-md h-[550px] rounded-3xl overflow-hidden ">
-
-    <img
-      src={founderImg}
-      alt="Founder"
-      className="w-full h-full object-cover hover:scale-105 transition duration-500"
-    />
-
-  </div>
+ <div className="w-full max-w-md flex items-center justify-center">
+  <img
+    src={founderImg}
+    alt="Founder"
+    className="max-w-full max-h-[500px] object-contain hover:scale-105 transition duration-500"
+  />
+</div>
 </div>
 
       {/* Right Content */}
       <div className="p-8 md:p-16 lg:py-[72px] lg:px-[68px] flex flex-col justify-center">
         <div className="font-oswald text-[10.5px] tracking-[0.2em] uppercase text-[#DBE465] mb-4">
-          Founder & Managing Director
+         FOUNDER & CEO
         </div>
 
         <h2 className="font-oswald text-[clamp(48px,6.5vw,82px)] font-bold text-white uppercase leading-[0.92] mb-7">

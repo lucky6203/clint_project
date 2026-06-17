@@ -15,6 +15,7 @@ export function ProduceSection() {
         <div className="flex flex-col md:flex-row w-full md:w-fit border border-forest/40 rounded-md overflow-hidden mb-9">
           {[
             { id: 'fruits', label: 'Export Fruits' },
+            { id: 'veg', label: 'Global Vegetables' },
             { id: 'imports', label: 'Global Imports' }
           ].map(tab => (
             <button 
@@ -38,12 +39,12 @@ export function ProduceSection() {
             { emoji: '🥭', name: 'Mango', vars: 'Alphonso · Kesar · Baganpalli', season: 'May – Aug', bg: 'bg-terracotta' }
           ].map(p => <ProduceCard key={p.name} {...p} />)}
           
-          {/* {activeTab === 'veg' && [
+          {activeTab === 'veg' && [
             { emoji: '🧅', name: 'Onion', vars: 'Red · White · Shallot', season: 'Year Round', bg: 'bg-forest' },
             { emoji: '🍅', name: 'Tomato', vars: 'Hybrid · Roma', season: 'Year Round', bg: 'bg-olive' },
             { emoji: '🍈', name: 'Guava', vars: 'Allahabad Safeda · L-49', season: 'Year Round', bg: 'bg-brown' },
             { emoji: '🫛', name: 'Vegetables', vars: 'Okra · Bitter Gourd · Drumstick', season: 'Seasonal', bg: 'bg-terracotta' }
-          ].map(p => <ProduceCard key={p.name} {...p} />)} */}
+          ].map(p => <ProduceCard key={p.name} {...p} />)}
 
           {activeTab === 'imports' && [
             { emoji: '🍊', name: 'Citrus', vars: 'Egypt · South Africa · Spain', season: 'Year Round', bg: 'bg-[#6b4423]' },

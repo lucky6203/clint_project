@@ -109,7 +109,7 @@ export function ContactSection() {
             </option>
 
             <option className="bg-[#1F3A2C]">
-              Farmer / Grower
+              Exporter / Farmer
             </option>
 
             <option className="bg-[#1F3A2C]">
