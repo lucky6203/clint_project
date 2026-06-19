@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FaMapMarkerAlt, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -22,12 +21,11 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr]"
+      className="grid grid-cols-1 lg:grid-cols-2"
     >
       {/* Left Side */}
-      <div className="bg-[#B66A50] p-8 md:p-16 lg:py-[72px] lg:px-[64px] flex flex-col justify-between lg:min-h-[600px]">
-
-        <h2 className="font-oswald text-[clamp(48px,7.5vw,92px)] font-bold text-white uppercase leading-[0.92]">
+      <div className="bg-[#B66A50] flex flex-col justify-between p-8 md:p-16 lg:px-[64px] lg:py-[72px] min-h-[650px]">
+        <h2 className="font-oswald text-[clamp(48px,7vw,92px)] font-bold text-white uppercase leading-[0.92]">
           Let's
           <br />
           Build
@@ -36,7 +34,6 @@ export function ContactSection() {
         </h2>
 
         <div className="flex flex-col gap-6 mt-12">
-
           {contactInfo.map((row, index) => (
             <div
               key={index}
@@ -51,21 +48,17 @@ export function ContactSection() {
               </span>
             </div>
           ))}
-
         </div>
       </div>
 
-      {/* Right Side Form */}
-      <div className="bg-[#1F3A2C] p-8 md:p-16 lg:py-[72px] lg:px-[64px]">
-
+      {/* Right Side */}
+      <div className="bg-[#1F3A2C] p-8 md:p-16 lg:px-[64px] lg:py-[72px] flex flex-col justify-center min-h-[650px]">
         <h3 className="font-oswald text-[18px] font-bold text-[#DBE465] uppercase tracking-[0.12em] mb-8">
           Send a Message
         </h3>
 
         <form onSubmit={(e) => e.preventDefault()}>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-
             <input
               type="text"
               placeholder="Name"
@@ -77,11 +70,9 @@ export function ContactSection() {
               placeholder="Company"
               className="bg-transparent border-b border-white/20 text-white py-3 w-full outline-none focus:border-[#DBE465] placeholder:text-white/30"
             />
-
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-
             <input
               type="email"
               placeholder="Email"
@@ -93,7 +84,6 @@ export function ContactSection() {
               placeholder="Phone"
               className="bg-transparent border-b border-white/20 text-white py-3 w-full outline-none focus:border-[#DBE465] placeholder:text-white/30"
             />
-
           </div>
 
           <select
@@ -103,26 +93,11 @@ export function ContactSection() {
             <option value="" disabled>
               I am a...
             </option>
-
-            <option className="bg-[#1F3A2C]">
-              Buyer / Importer
-            </option>
-
-            <option className="bg-[#1F3A2C]">
-              Exporter / Farmer
-            </option>
-
-            <option className="bg-[#1F3A2C]">
-              Logistics Partner
-            </option>
-
-            <option className="bg-[#1F3A2C]">
-              Investor
-            </option>
-
-            <option className="bg-[#1F3A2C]">
-              Other
-            </option>
+            <option className="bg-[#1F3A2C]">Buyer / Importer</option>
+            <option className="bg-[#1F3A2C]">Exporter / Farmer</option>
+            <option className="bg-[#1F3A2C]">Logistics Partner</option>
+            <option className="bg-[#1F3A2C]">Investor</option>
+            <option className="bg-[#1F3A2C]">Other</option>
           </select>
 
           <textarea
@@ -136,11 +111,8 @@ export function ContactSection() {
           >
             Send
           </button>
-
         </form>
-
       </div>
     </section>
   );
 }
-

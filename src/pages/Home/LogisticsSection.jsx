@@ -14,7 +14,7 @@ export function LogisticsSection() {
             {[
               { icon: '✈️', mode: 'Air Freight', dest: 'India → Middle East · USA · EU' },
               { icon: '🚚', mode: 'Road (GCC) - through our partners ', dest: 'Dubai → Saudi  · Qatar · Oman' },
-              { icon: '🚢', mode: 'Sea Freight', dest: 'India → EU · Southeast Asia · USA' }
+              { icon: '🚢', mode: 'Sea Freight', dest: 'India → Middle East · EU · Southeast Asia · USA' }
             ].map(route => (
               <div key={route.mode} className="flex flex-col sm:flex-row items-center sm:text-left text-center gap-4 sm:gap-6 p-7 sm:px-9 bg-black/20 transition-colors hover:bg-black/35">
                 <span className="text-[32px] shrink-0">{route.icon}</span>
