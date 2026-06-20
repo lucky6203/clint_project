@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { FaMapMarkerAlt, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 export function ContactSection() {
+  const form = useRef();
+  const [loading, setLoading] = useState(false);
+
   const contactInfo = [
     {
       icon: <FaMapMarkerAlt />,
@@ -17,6 +21,29 @@ export function ContactSection() {
       text: "@seesaw_foods",
     },
   ];
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+await emailjs.sendForm(
+  "service_nhq1n3p", // Service ID
+  "template_6706ork", // Template ID
+  form.current,
+  "VFYoydkWMJCn8zekM" // Public Key
+);
+
+      alert("Message Sent Successfully!");
+      form.current.reset();
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message.");
+    }
+
+    setLoading(false);
+  };
 
   return (
     <section
@@ -57,16 +84,19 @@ export function ContactSection() {
           Send a Message
         </h3>
 
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form ref={form} onSubmit={sendEmail}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <input
               type="text"
+              name="name"
+              required
               placeholder="Name"
               className="bg-transparent border-b border-white/20 text-white py-3 w-full outline-none focus:border-[#DBE465] placeholder:text-white/30"
             />
 
             <input
               type="text"
+              name="company"
               placeholder="Company"
               className="bg-transparent border-b border-white/20 text-white py-3 w-full outline-none focus:border-[#DBE465] placeholder:text-white/30"
             />
@@ -75,18 +105,22 @@ export function ContactSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <input
               type="email"
+              name="email"
+              required
               placeholder="Email"
               className="bg-transparent border-b border-white/20 text-white py-3 w-full outline-none focus:border-[#DBE465] placeholder:text-white/30"
             />
 
             <input
               type="tel"
+              name="phone"
               placeholder="Phone"
               className="bg-transparent border-b border-white/20 text-white py-3 w-full outline-none focus:border-[#DBE465] placeholder:text-white/30"
             />
           </div>
 
           <select
+            name="role"
             defaultValue=""
             className="bg-transparent border-b border-white/20 text-white py-3 w-full outline-none focus:border-[#DBE465] mb-4"
           >
@@ -101,15 +135,18 @@ export function ContactSection() {
           </select>
 
           <textarea
+            name="message"
+            required
             placeholder="Your Message..."
             className="bg-transparent border-b border-white/20 text-white py-3 w-full outline-none focus:border-[#DBE465] placeholder:text-white/30 min-h-[120px] mb-6"
           />
 
           <button
             type="submit"
-            className="bg-[#DBE465] text-[#1F3A2C] px-10 py-4 rounded-lg font-bold uppercase hover:bg-[#d0db54] transition-all duration-300"
+            disabled={loading}
+            className="bg-[#DBE465] text-[#1F3A2C] px-10 py-4 rounded-lg font-bold uppercase hover:bg-[#d0db54] transition-all duration-300 disabled:opacity-60"
           >
-            Send
+            {loading ? "Sending..." : "Send "}
           </button>
         </form>
       </div>

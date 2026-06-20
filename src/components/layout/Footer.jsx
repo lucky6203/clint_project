@@ -7,19 +7,26 @@ export default function Footer() {
 
         {/* Logo Section */}
         <div className="flex items-center gap-3">
-
           <img
             src={logo}
             alt="Seesaw Foods"
             className="w-full h-20 object-contain p-1"
           />
-
         </div>
 
-        {/* Copyright */}
-        <p className="text-black/50 text-sm text-center">
-          © 2026 Seesaw Foods. All Rights Reserved.
-        </p>
+        {/* Copyright + Developer */}
+        <div className="text-center">
+          <p className="text-black/50 text-sm">
+            © 2026 Seesaw Foods. All Rights Reserved.
+          </p>
+
+          <p className="text-black/60 text-sm mt-2">
+            Developed by{" "}
+            <span className="font-semibold text-[#7ab648]">
+              The Marketing Solution
+            </span>
+          </p>
+        </div>
 
         {/* Links */}
         <div className="flex gap-6">

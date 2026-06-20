@@ -15,7 +15,7 @@ export function ProduceSection() {
         <div className="flex flex-col md:flex-row w-full md:w-fit border border-forest/40 rounded-md overflow-hidden mb-9">
           {[
             { id: 'fruits', label: 'Export Fruits' },
-            { id: 'veg', label: 'Global Vegetables' },
+            { id: 'veg', label: 'EXPORT VEGETABLES' },
             { id: 'imports', label: 'Global Imports' }
           ].map(tab => (
             <button 
