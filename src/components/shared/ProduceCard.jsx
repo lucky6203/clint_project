@@ -1,9 +1,13 @@
 import React from 'react';
 
-export function ProduceCard({ emoji, name, vars, season, bg }) {
+export function ProduceCard({ emoji, image, name, vars, season, bg }) {
   return (
     <div className={`${bg} p-9 cursor-default transition-all duration-200 hover:scale-[1.025] hover:brightness-110 hover:z-10 relative`}>
-      <span className="text-[50px] block mb-4.5">{emoji}</span>
+      {image ? (
+        <img src={image} alt={name} className="w-[50px] h-[50px] object-contain mb-4.5" />
+      ) : (
+        <span className="text-[50px] block mb-4.5">{emoji}</span>
+      )}
       <div className="font-oswald text-[22px] font-bold text-white uppercase tracking-wide mb-2">
         {name}
       </div>

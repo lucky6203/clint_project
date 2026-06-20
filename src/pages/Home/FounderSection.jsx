@@ -1,5 +1,6 @@
 import React from "react";
 import founderImg from "@/assets/images/founder-removebg-preview.png";
+import bgImg from "@/assets/images/WhatsApp Image 2026-06-20 at 2.59.33 PM.jpeg";
 
 export function FounderSection() {
   return (
@@ -8,11 +9,14 @@ export function FounderSection() {
       className="grid grid-cols-1 lg:grid-cols-2 min-h-[650px]"
     >
       {/* Left Image Section */}
-      <div className="bg-[#2d4a2d] flex items-center justify-center p-6 md:p-8 lg:p-12 overflow-hidden">
+      <div 
+        className="flex items-center justify-center p-6 md:p-8 lg:p-12 overflow-hidden relative bg-cover bg-center min-h-[400px] lg:min-h-auto"
+        style={{ backgroundImage: `linear-gradient(rgba(45, 74, 45, 0.45), rgba(45, 74, 45, 0.45)), url(${bgImg})` }}
+      >
         <img
           src={founderImg}
           alt="Founder"
-          className="w-full max-w-[550px] h-auto object-contain transition-all duration-500 hover:scale-105"
+          className="w-full max-w-[380px] h-auto object-contain transition-all duration-500 hover:scale-105 relative z-10"
         />
       </div>
 
