@@ -16,7 +16,7 @@ export function HeroSection() {
           <br />World.
         </h1>
         <p className="text-[14px] leading-relaxed text-white/70 max-w-[420px] mb-12">
-          Trusted sourcing partner for premium Indian fruits & vegetables — verified growers, global buyers, zero surprises.
+          Trusted sourcing partner for premium Indian fruits & vegetables-  verified growers, global buyers, zero surprises.
         </p>
         <div className="flex gap-4 flex-wrap">
           <a href="#services" className="bg-[#dbe465] text-[#2d4a2d] px-8 py-3.5 rounded-sm font-bold text-[13px] tracking-[0.1em] uppercase transition hover:bg-white hover:-translate-y-0.5 inline-block">

@@ -29,7 +29,7 @@ export function FounderSection() {
         </h2>
 
         <blockquote className="border-l-4 border-[#DBE465] pl-5 text-[14px] md:text-[15px] italic text-white/70 leading-loose max-w-[450px] mb-10">
-          “We're rebuilding how Indian farmers connect with global buyers —
+          “We're rebuilding how Indian farmers connect with global buyers -
           with dignity, transparency, and technology.”
         </blockquote>
 
