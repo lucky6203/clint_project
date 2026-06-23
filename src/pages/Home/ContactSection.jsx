@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { FaMapMarkerAlt, FaInstagram } from "react-icons/fa";
+import { FaMapMarkerAlt, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { appConfig } from "@/config/app";
 
 export function ContactSection() {
   const form = useRef();
@@ -11,39 +12,58 @@ export function ContactSection() {
     {
       icon: <FaMapMarkerAlt />,
       text: "Mumbai, India",
+      link: "https://maps.google.com/?q=Mumbai, India",
     },
     {
       icon: <MdEmail />,
       text: "contact@seesawfoods.in",
+      link: "mailto:contact@seesawfoods.in",
     },
     {
       icon: <FaInstagram />,
       text: "@seesaw_foods",
+      link: "https://instagram.com/seesaw_foods",
     },
+    // {
+    //   icon: <FaWhatsapp />,
+    //   text: "+91 99307 77555",
+    //   link: `https://wa.me/${appConfig.whatsappNumber}?text=${encodeURIComponent(appConfig.whatsappMessage)}`,
+    // },
   ];
 
+
   const sendEmail = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-await emailjs.sendForm(
-  "service_nhq1n3p", // Service ID
-  "template_6706ork", // Template ID
-  form.current,
-  "VFYoydkWMJCn8zekM" // Public Key
-);
+  try {
+    await emailjs.sendForm(
+      "service_nhq1n3p",
+      "template_6706ork",
+      form.current,
+      "VFYoydkWMJCn8zekM"
+    );
 
-      alert("Message Sent Successfully!");
-      form.current.reset();
-    } catch (error) {
-      console.error(error);
-      alert("Failed to send message.");
+    // Google Ads Conversion Tracking
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17834778567/27Y6CKDprcMcEMe_pLhC",
+        value: 1.0,
+        currency: "INR",
+      });
     }
 
+    alert("Message Sent Successfully!");
+    form.current.reset();
+  } catch (error) {
+    console.error("Email Error:", error);
+    alert("Failed to send message.");
+  } finally {
     setLoading(false);
-  };
+  }
+};
+
 
   return (
     <section
@@ -62,18 +82,21 @@ await emailjs.sendForm(
 
         <div className="flex flex-col gap-6 mt-12">
           {contactInfo.map((row, index) => (
-            <div
+            <a
               key={index}
-              className="flex items-center gap-4 text-white"
+              href={row.link}
+              target={row.link.startsWith("mailto:") ? undefined : "_blank"}
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 text-white hover:text-[#DBE465] transition-all duration-300 group w-fit"
             >
-              <span className="text-2xl text-[#DBE465]">
+              <span className="text-2xl text-[#DBE465] group-hover:scale-110 transition-transform duration-300">
                 {row.icon}
               </span>
 
               <span className="text-lg font-medium">
                 {row.text}
               </span>
-            </div>
+            </a>
           ))}
         </div>
       </div>

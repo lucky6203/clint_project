@@ -64,7 +64,7 @@ export function ProduceSection() {
       image: GREENCHILLI,
       name: 'GREEN CHILLI + VEGETABLES',
       vars: 'Okra · Gourd · Drumstick',
-      season: 'Seasonal',
+      season: 'SEASON + REGULAR',
       bg: 'bg-terracotta',
     },
   ];

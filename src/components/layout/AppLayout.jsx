@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { WhatsAppButton } from '@/components/shared/WhatsAppButton';
 
 export function AppLayout({ children }) {
   return (
@@ -10,6 +11,8 @@ export function AppLayout({ children }) {
         {children}
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
+

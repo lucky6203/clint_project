@@ -19,13 +19,6 @@ export default function Footer() {
           <p className="text-black/50 text-sm">
             © 2026 Seesaw Foods. All Rights Reserved.
           </p>
-
-          <p className="text-black/60 text-sm mt-2">
-            Developed by{" "}
-            <span className="font-semibold text-[#7ab648]">
-              The Marketing Solution
-            </span>
-          </p>
         </div>
 
         {/* Links */}

@@ -75,8 +75,8 @@ export function ServicesSection() {
         </SectionHeading>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
-          {services.map((svc, i) => (
+<div className="grid grid-cols-2 lg:grid-cols-2 gap-4 md:gap-5">
+            {services.map((svc, i) => (
             <div
               key={i}
               className={`
