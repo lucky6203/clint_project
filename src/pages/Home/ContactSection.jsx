@@ -39,7 +39,7 @@ export function ContactSection() {
 
   try {
     await emailjs.sendForm(
-      "service_nhq1n3p",
+      "service_gi0i9qq",
       "template_6706ork",
       form.current,
       "VFYoydkWMJCn8zekM"
