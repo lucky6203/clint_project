@@ -5,7 +5,7 @@ import { appConfig } from "@/config/app";
 export function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);
   const number = 919819890393;
-  const message = "Welcome to seesaw Foods! How can we help you ?";
+  const message = "Welcome to seesaw Foods! How can we help you?";
   const waLink = `https://wa.me/${number}?text=${message}`;
 
   return (
